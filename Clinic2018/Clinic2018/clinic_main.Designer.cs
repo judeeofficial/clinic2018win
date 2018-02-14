@@ -386,7 +386,7 @@
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "clinic_main_v2";
-            this.Text = "1Medical and Health Care Management System";
+            this.Text = "Medical and Health Care Management System";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.clinic_main_v2_Load);
             this.menuStrip1.ResumeLayout(false);
