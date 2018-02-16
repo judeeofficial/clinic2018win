@@ -27,5 +27,15 @@ namespace Clinic2018
             set { label1.Text = "ค่าที่ได้รับ :" + " "+ value; }
        
         }
+
+        private void bunifuCheckbox1_OnChange(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuTextbox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -28,20 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.button4 = new System.Windows.Forms.Button();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -50,12 +47,9 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox22 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
             this.textBox15 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -87,11 +81,16 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.queueTableAdapter1 = new Clinic2018.DataSet1TableAdapters.queueTableAdapter();
+            this.dataSet1 = new Clinic2018.DataSet1();
+            this.districtsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.districtsTableAdapter = new Clinic2018.DataSet1TableAdapters.districtsTableAdapter();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.districtsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -126,9 +125,9 @@
             this.label1.Location = new System.Drawing.Point(461, 9);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label1.Size = new System.Drawing.Size(201, 42);
+            this.label1.Size = new System.Drawing.Size(178, 42);
             this.label1.TabIndex = 1;
-            this.label1.Text = "information";
+            this.label1.Text = "เวชระเบียน";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // panel2
@@ -154,14 +153,10 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.button4);
             this.tabPage1.Controls.Add(this.comboBox4);
             this.tabPage1.Controls.Add(this.comboBox3);
             this.tabPage1.Controls.Add(this.comboBox2);
-            this.tabPage1.Controls.Add(this.comboBox5);
             this.tabPage1.Controls.Add(this.comboBox1);
-            this.tabPage1.Controls.Add(this.label24);
-            this.tabPage1.Controls.Add(this.label18);
             this.tabPage1.Controls.Add(this.label23);
             this.tabPage1.Controls.Add(this.label17);
             this.tabPage1.Controls.Add(this.label10);
@@ -170,12 +165,9 @@
             this.tabPage1.Controls.Add(this.label8);
             this.tabPage1.Controls.Add(this.label15);
             this.tabPage1.Controls.Add(this.label6);
-            this.tabPage1.Controls.Add(this.textBox22);
-            this.tabPage1.Controls.Add(this.textBox16);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.label21);
             this.tabPage1.Controls.Add(this.label14);
-            this.tabPage1.Controls.Add(this.label25);
             this.tabPage1.Controls.Add(this.textBox15);
             this.tabPage1.Controls.Add(this.label9);
             this.tabPage1.Controls.Add(this.label20);
@@ -210,15 +202,6 @@
             this.tabPage1.Text = "ลงทะเบียน";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(587, 309);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
             // comboBox4
             // 
             this.comboBox4.FormattingEnabled = true;
@@ -243,42 +226,14 @@
             this.comboBox2.Size = new System.Drawing.Size(113, 21);
             this.comboBox2.TabIndex = 4;
             // 
-            // comboBox5
-            // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(564, 279);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(113, 21);
-            this.comboBox5.TabIndex = 4;
-            this.comboBox5.Click += new System.EventHandler(this.comboBox5_Click);
-            // 
             // comboBox1
             // 
+            this.comboBox1.DataSource = this.districtsBindingSource;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(127, 175);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(113, 21);
             this.comboBox1.TabIndex = 4;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label24.Location = new System.Drawing.Point(6, 359);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(115, 16);
-            this.label24.TabIndex = 3;
-            this.label24.Text = "หมายเลขบัตรประชาชน";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label18.Location = new System.Drawing.Point(263, 205);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(115, 16);
-            this.label18.TabIndex = 3;
-            this.label18.Text = "หมายเลขบัตรประชาชน";
             // 
             // label23
             // 
@@ -296,9 +251,9 @@
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label17.Location = new System.Drawing.Point(263, 155);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(115, 16);
+            this.label17.Size = new System.Drawing.Size(94, 16);
             this.label17.TabIndex = 3;
-            this.label17.Text = "หมายเลขบัตรประชาชน";
+            this.label17.Text = "เบอร์โทรผู้ปกครอง";
             // 
             // label10
             // 
@@ -326,9 +281,9 @@
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label16.Location = new System.Drawing.Point(263, 104);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(115, 16);
+            this.label16.Size = new System.Drawing.Size(88, 16);
             this.label16.TabIndex = 3;
-            this.label16.Text = "หมายเลขบัตรประชาชน";
+            this.label16.Text = "ชื่อสามีและภรรยา";
             // 
             // label8
             // 
@@ -346,9 +301,9 @@
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label15.Location = new System.Drawing.Point(263, 54);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(115, 16);
+            this.label15.Size = new System.Drawing.Size(40, 16);
             this.label15.TabIndex = 3;
-            this.label15.Text = "หมายเลขบัตรประชาชน";
+            this.label15.Text = "ชื่อบิดา";
             // 
             // label6
             // 
@@ -359,20 +314,6 @@
             this.label6.Size = new System.Drawing.Size(46, 16);
             this.label6.TabIndex = 3;
             this.label6.Text = "นามสกุล";
-            // 
-            // textBox22
-            // 
-            this.textBox22.Location = new System.Drawing.Point(127, 355);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(113, 20);
-            this.textBox22.TabIndex = 2;
-            // 
-            // textBox16
-            // 
-            this.textBox16.Location = new System.Drawing.Point(384, 201);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(113, 20);
-            this.textBox16.TabIndex = 2;
             // 
             // label4
             // 
@@ -401,19 +342,9 @@
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label14.Location = new System.Drawing.Point(263, 180);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(115, 16);
+            this.label14.Size = new System.Drawing.Size(72, 16);
             this.label14.TabIndex = 3;
-            this.label14.Text = "หมายเลขบัตรประชาชน";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label25.Location = new System.Drawing.Point(517, 281);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(41, 16);
-            this.label25.TabIndex = 3;
-            this.label25.Text = "จังหวัด";
+            this.label14.Text = "เบอร์โทรศัพท์";
             // 
             // textBox15
             // 
@@ -448,9 +379,9 @@
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label13.Location = new System.Drawing.Point(263, 130);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(115, 16);
+            this.label13.Size = new System.Drawing.Size(91, 16);
             this.label13.TabIndex = 3;
-            this.label13.Text = "หมายเลขบัตรประชาชน";
+            this.label13.Text = "เบอร์โทรศัพท์บ้าน";
             // 
             // textBox6
             // 
@@ -520,9 +451,9 @@
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label12.Location = new System.Drawing.Point(263, 79);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(115, 16);
+            this.label12.Size = new System.Drawing.Size(51, 16);
             this.label12.TabIndex = 3;
-            this.label12.Text = "หมายเลขบัตรประชาชน";
+            this.label12.Text = "ชื่อมารดา";
             // 
             // textBox18
             // 
@@ -582,9 +513,9 @@
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label11.Location = new System.Drawing.Point(263, 29);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(115, 16);
+            this.label11.Size = new System.Drawing.Size(66, 16);
             this.label11.TabIndex = 3;
-            this.label11.Text = "หมายเลขบัตรประชาชน";
+            this.label11.Text = "ชื่อผู้ปกครอง";
             // 
             // textBox3
             // 
@@ -672,6 +603,20 @@
             // 
             this.queueTableAdapter1.ClearBeforeFill = true;
             // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // districtsBindingSource
+            // 
+            this.districtsBindingSource.DataMember = "districts";
+            this.districtsBindingSource.DataSource = this.dataSet1;
+            // 
+            // districtsTableAdapter
+            // 
+            this.districtsTableAdapter.ClearBeforeFill = true;
+            // 
             // clinic_insert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -684,6 +629,7 @@
             this.Name = "clinic_insert";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "clinic_insert";
+            this.Load += new System.EventHandler(this.clinic_insert_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -692,6 +638,8 @@
             this.tabPage1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.districtsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -712,8 +660,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label10;
@@ -722,8 +668,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox22;
-        private System.Windows.Forms.TextBox textBox16;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label14;
@@ -754,8 +698,8 @@
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.Label label25;
+        private DataSet1 dataSet1;
+        private System.Windows.Forms.BindingSource districtsBindingSource;
+        private DataSet1TableAdapters.districtsTableAdapter districtsTableAdapter;
     }
 }

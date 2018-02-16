@@ -15,7 +15,7 @@ namespace Clinic2018
 {
     public partial class clinic_insert : Form
     {
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-VAM0JO2\SQLEXPRESS; Initial Catalog=Clinic2018; User ID=tanakorn29; Password=111111");
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-L2HUNPH\SQLEXPRESS; Initial Catalog=Clinic2018; User ID=sa; Password=1234");
 
         public clinic_insert()
         {
@@ -28,7 +28,7 @@ namespace Clinic2018
         }
         private void comboBox5_Click(object sender, EventArgs e)
         {
-            conn.Open(); //ทดสอบ
+        /*    conn.Open(); //ทดสอบ
             SqlCommand cmd = conn.CreateCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "select province_name from provinces";
@@ -43,6 +43,18 @@ namespace Clinic2018
             }
 
             conn.Close();
+            */
+        }
+
+        private void clinic_insert_Load(object sender, EventArgs e)
+        {
+  
+
+        }
+
+        private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

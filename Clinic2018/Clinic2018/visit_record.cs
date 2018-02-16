@@ -36,5 +36,11 @@ namespace Clinic2018
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            q_visit_record q = new q_visit_record();
+            q.Show();
+        }
     }
 }
