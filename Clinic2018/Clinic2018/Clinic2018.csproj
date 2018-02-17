@@ -125,6 +125,12 @@
     <Compile Include="clinic_notification.Designer.cs">
       <DependentUpon>clinic_notification.cs</DependentUpon>
     </Compile>
+    <Compile Include="clinic_opd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clinic_opd.Designer.cs">
+      <DependentUpon>clinic_opd.cs</DependentUpon>
+    </Compile>
     <Compile Include="clinic_search.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +143,9 @@
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="FromWindowState.cs" />
+    <Compile Include="MyTabPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="q_visit_record.cs">
@@ -184,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="clinic_notification.resx">
       <DependentUpon>clinic_notification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clinic_opd.resx">
+      <DependentUpon>clinic_opd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="clinic_search.resx">
       <DependentUpon>clinic_search.cs</DependentUpon>

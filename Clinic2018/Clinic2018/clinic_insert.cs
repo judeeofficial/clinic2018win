@@ -56,5 +56,37 @@ namespace Clinic2018
         {
 
         }
+        //บันทึกข้อมูลลง Database
+        private void button3_Click(object sender, EventArgs e)
+        {
+            // tabControl1.TabPages.Add(new MyTabPage(new clinic_opd()));
+            string insertquery = "insert into patient(patient_id) values('" + txtpatient_id.Text + "')";
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(insertquery, conn);
+            try
+            {
+                if (cmd.ExecuteNonQuery() == 1)
+                {
+                    //แสดงข้อความแทน
+                    label6.ForeColor = Color.Green;
+                    label6.Text = "ครบ 13 หลัก";
+
+                    //แสดงป็อปอัพข้อความแทน
+                    //MessageBox.Show("Data Inserted");
+                }
+                else
+                {
+                    MessageBox.Show("Data Not Inserted");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+
+            conn.Close();
+        }
     }
 }

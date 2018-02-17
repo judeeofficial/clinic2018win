@@ -35,10 +35,14 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.districtsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1 = new Clinic2018.DataSet1();
             this.label23 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -74,23 +78,19 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtpatient_id = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.queueTableAdapter1 = new Clinic2018.DataSet1TableAdapters.queueTableAdapter();
-            this.dataSet1 = new Clinic2018.DataSet1();
-            this.districtsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.districtsTableAdapter = new Clinic2018.DataSet1TableAdapters.districtsTableAdapter();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.districtsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -134,7 +134,6 @@
             // 
             this.panel2.Controls.Add(this.tabControl1);
             this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 51);
             this.panel2.Name = "panel2";
@@ -144,7 +143,6 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Location = new System.Drawing.Point(3, 6);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -153,6 +151,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.comboBox5);
+            this.tabPage1.Controls.Add(this.label18);
             this.tabPage1.Controls.Add(this.comboBox4);
             this.tabPage1.Controls.Add(this.comboBox3);
             this.tabPage1.Controls.Add(this.comboBox2);
@@ -192,7 +192,7 @@
             this.tabPage1.Controls.Add(this.textBox3);
             this.tabPage1.Controls.Add(this.textBox9);
             this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.textBox2);
+            this.tabPage1.Controls.Add(this.txtpatient_id);
             this.tabPage1.Controls.Add(this.panel3);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -201,6 +201,24 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "ลงทะเบียน";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Location = new System.Drawing.Point(384, 213);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(113, 21);
+            this.comboBox5.TabIndex = 6;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label18.Location = new System.Drawing.Point(269, 214);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(34, 16);
+            this.label18.TabIndex = 5;
+            this.label18.Text = "สังกัด";
             // 
             // comboBox4
             // 
@@ -234,6 +252,16 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(113, 21);
             this.comboBox1.TabIndex = 4;
+            // 
+            // districtsBindingSource
+            // 
+            this.districtsBindingSource.DataMember = "districts";
+            this.districtsBindingSource.DataSource = this.dataSet1;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label23
             // 
@@ -541,12 +569,12 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "หมายเลขบัตรประชาชน";
             // 
-            // textBox2
+            // txtpatient_id
             // 
-            this.textBox2.Location = new System.Drawing.Point(127, 25);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(113, 20);
-            this.textBox2.TabIndex = 2;
+            this.txtpatient_id.Location = new System.Drawing.Point(127, 25);
+            this.txtpatient_id.Name = "txtpatient_id";
+            this.txtpatient_id.Size = new System.Drawing.Size(113, 20);
+            this.txtpatient_id.TabIndex = 2;
             // 
             // panel3
             // 
@@ -567,51 +595,21 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "ข้อมูลทั่วไป";
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1064, 427);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
             // button3
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.button3.Location = new System.Drawing.Point(594, 465);
+            this.button3.Location = new System.Drawing.Point(690, 465);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 40);
             this.button3.TabIndex = 5;
-            this.button3.Text = "Next";
+            this.button3.Text = "Save";
             this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.button2.Location = new System.Drawing.Point(432, 465);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 40);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Main";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // queueTableAdapter1
             // 
             this.queueTableAdapter1.ClearBeforeFill = true;
-            // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // districtsBindingSource
-            // 
-            this.districtsBindingSource.DataMember = "districts";
-            this.districtsBindingSource.DataSource = this.dataSet1;
             // 
             // districtsTableAdapter
             // 
@@ -636,10 +634,10 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.districtsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.districtsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -652,11 +650,9 @@
         private DataSet1TableAdapters.queueTableAdapter queueTableAdapter1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtpatient_id;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -701,5 +697,7 @@
         private DataSet1 dataSet1;
         private System.Windows.Forms.BindingSource districtsBindingSource;
         private DataSet1TableAdapters.districtsTableAdapter districtsTableAdapter;
+        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.Label label18;
     }
 }

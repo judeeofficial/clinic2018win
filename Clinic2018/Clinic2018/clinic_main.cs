@@ -43,7 +43,7 @@ namespace Clinic2018
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            visit_record vsr = new visit_record();
+            clinic_search vsr = new clinic_search();
             vsr.Show();
             
             //clinic_search sh1 = new clinic_search();
@@ -69,6 +69,16 @@ namespace Clinic2018
         {
             clinic_search cic = new Clinic2018.clinic_search();
             cic.Show();
+        }
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }

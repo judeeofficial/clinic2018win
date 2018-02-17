@@ -164,9 +164,9 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label1.Location = new System.Drawing.Point(157, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(319, 42);
+            this.label1.Size = new System.Drawing.Size(340, 42);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Search customers";
+            this.label1.Text = "ค้นหาข้อมูลเวชระเบียน";
             // 
             // clinic_search
             // 
