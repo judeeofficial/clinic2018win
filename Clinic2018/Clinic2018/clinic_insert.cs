@@ -1,34 +1,32 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 //-----------------------------------
-using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
+using System.Linq;
+using System.Drawing;
+using System.ComponentModel;
 
 namespace Clinic2018
 {
     public partial class clinic_insert : Form
     {
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-L2HUNPH\SQLEXPRESS; Initial Catalog=Clinic2018; User ID=sa; Password=1234");
-
+        
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-VAM0JO2\SQLEXPRESS; Initial Catalog=Clinic2018; User ID=tanakorn29; Password=111111");
+        
         public clinic_insert()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
         private void comboBox5_Click(object sender, EventArgs e)
         {
-        /*    conn.Open(); //ทดสอบ
+        /*  conn.Open(); //ทดสอบ
             SqlCommand cmd = conn.CreateCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "select province_name from provinces";
@@ -46,21 +44,53 @@ namespace Clinic2018
             */
         }
 
-        private void clinic_insert_Load(object sender, EventArgs e)
+        /*private void patient_id_TextChanged(object sender, KeyPressEventArgs e)
         {
-  
+            patient_id.MaxLength = 13;
+            if (patient_id.Text ==  )
+            {
+                label6.ForeColor = Color.Green;
+                label6.Text = "ครบ 13 หลัก";
+            }
+            else
+            {
+                label6.ForeColor = Color.Red;
+                label6.Text = "ไม่ครบ 13 หลัก";
+            }
+        }*/
 
+        private bool IsNumeric(string text)
+        {
+            throw new NotImplementedException();
         }
 
-        private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
+        private void patient_id_Enter(object sender, EventArgs e)
         {
-
+            
         }
-        //บันทึกข้อมูลลง Database
-        private void button3_Click(object sender, EventArgs e)
+
+        private void patient_id_Validated(object sender, CancelEventArgs  e)
         {
-            // tabControl1.TabPages.Add(new MyTabPage(new clinic_opd()));
-            string insertquery = "insert into patient(patient_id) values('" + txtpatient_id.Text + "')";
+            patient_id.MaxLength = 13;
+            ErrorProvider ep = new ErrorProvider();
+
+            if (string.IsNullOrEmpty(patient_id.Text))
+            {
+                e.Cancel = true;
+                patient_id.Focus();
+                ep.SetError(patient_id, " Please enter your user name");
+            }
+            else
+            {
+                e.Cancel = false;
+                ep.SetError(patient_id, null);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string insertquery = "insert into patient(patient_id, patient_name, patient_birthday) values('" +
+                patient_id.Text + "', '" + patient_name.Text + "', '" + dateTimePicker1 + "')";
             conn.Open();
             SqlCommand cmd = new SqlCommand(insertquery, conn);
             try
@@ -83,10 +113,40 @@ namespace Clinic2018
             {
                 MessageBox.Show(ex.Message);
             }
-
-
-
             conn.Close();
         }
-    }
+
+        private void patient_id_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        //เลือกวัน เดือน ปีเกิด แสดงอายุ
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime from = dateTimePicker1.Value;
+            DateTime to = DateTime.Now;
+            TimeSpan tspan = to - from;
+            double days = tspan.TotalDays;
+            label5.Text = (days / 365).ToString("0");
+        }
+
+    /*public void Regexp(string re, TextBox tb, PictureBox pc, Label lbel, string s)
+    {
+        //patient_id.MaxLength = 13;
+        Regex reger = new Regex(re);
+        if (regex.IsMatch(tb.Text))
+        {
+            pc.Image = Properties.Resources.valid;
+            lbel.ForeColor = Color.Red;
+            lbel.Text = s + " InValid";
+        }
+        else
+        {
+            pc.Image = Properties.Resources.valid;
+            lbel.ForeColor = Color.Green;
+            lbel.Text = s + " Valid";
+        }*/
+
+}
 }
