@@ -1,6 +1,6 @@
 ﻿namespace Clinic2018
 {
-    partial class visit_record
+    partial class clinic_visit_record
     {
         /// <summary>
         /// Required designer variable.

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Clinic2018
 {
-    public partial class visit_record : Form
+    public partial class clinic_visit_record : Form
     {
-        public visit_record()
+        public clinic_visit_record()
         {
             InitializeComponent();
         }

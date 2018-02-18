@@ -170,11 +170,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UserControl1.resx</DependentUpon>
     </Compile>
-    <Compile Include="visit_record.cs">
+    <Compile Include="clinic_visit_record.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="visit_record.designer.cs">
-      <DependentUpon>visit_record.cs</DependentUpon>
+    <Compile Include="clinic_visit_record.designer.cs">
+      <DependentUpon>clinic_visit_record.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="clinic_barcode.resx">
       <DependentUpon>clinic_barcode.cs</DependentUpon>
@@ -220,8 +220,8 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>UserControl11.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="visit_record.resx">
-      <DependentUpon>visit_record.cs</DependentUpon>
+    <EmbeddedResource Include="clinic_visit_record.resx">
+      <DependentUpon>clinic_visit_record.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
@@ -286,6 +286,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_user1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
